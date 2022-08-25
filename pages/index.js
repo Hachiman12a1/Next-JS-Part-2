@@ -21,7 +21,9 @@ const DUMMY_MEETUPS = [
 ];
 
 function index(props) {
-  return <MeetupList meetups={DUMMY_MEETUPS}></MeetupList>;
+  return (
+      <MeetupList meetups={DUMMY_MEETUPS}></MeetupList>
+  );
 }
 
 export default index;
