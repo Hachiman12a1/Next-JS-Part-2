@@ -1,6 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 import NewMeetupForm from "./../../components/meetups/NewMeetupForm";
 import { useRouter } from "next/router";
+import Head from "next/head";
+
 
 index.propTypes = {};
 
@@ -19,10 +21,21 @@ function index(props) {
 
     console.log(data);
 
-    router.push("/"); 
+    router.push("/");
   };
 
-  return <NewMeetupForm onAddMeetup={addNewMeetUpHandler}></NewMeetupForm>;
+  return (
+    <Fragment>
+      <Head>
+        <title>Add a new Meetup</title>
+        <meta
+          name="description"
+          content="Add your own meetups and create amazing networking opportunities."
+        />
+      </Head>
+      <NewMeetupForm onAddMeetup={addNewMeetUpHandler}></NewMeetupForm>
+    </Fragment>
+  );
 }
 
 export default index;
